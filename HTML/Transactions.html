@@ -8,9 +8,70 @@
     />
     <link
       rel="stylesheet"
-      href="/CSS/style.css"
+      href="/CSS/transactions.css"
     />
     <title>Transactions</title>
   </head>
-  <body></body>
+  <body>
+    <main>
+      <div class="container">
+        <section>
+          <div class="form-control">
+            <input
+              type="text"
+              name="accountNumber"
+              id="accountNumber"
+              placeholder="Enter your account"
+            />
+
+            <button
+              id="checkBalance"
+              class="btn btn-primary"
+            >
+              Check Balance
+            </button>
+            <div>
+              <span>Eth Balance</span>
+            </div>
+            <div
+              id="balance"
+              class="balance"
+            ></div>
+          </div>
+          <div class="form-control">
+            <input
+              type="text"
+              name="amount"
+              id="amount"
+              placeholder="Ange värde att överföra"
+            />
+          </div>
+          <div class="form-control">
+            <input
+              type="text"
+              name="toAccountNumber"
+              id="toAccountNumber"
+              placeholder="Till konto"
+            />
+          </div>
+          <div class="form-control">
+            <button
+              id="sendTx"
+              class="btn btn-primary"
+            >
+              Överför
+            </button>
+          </div>
+        </section>
+        <hr />
+        <section>
+          <h4>Transaktioner</h4>
+          <div class="transactions-container">
+            <div><span>Från</span><span>Till</span><span>Ethers</span></div>
+            <div id="transactions"></div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
 </html>

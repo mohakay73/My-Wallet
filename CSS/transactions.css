@@ -1,0 +1,67 @@
+/* Add to your transactions.css file */
+
+html,
+body {
+  background: hsl(227, 10%, 10%);
+  height: 100%;
+  margin: 0;
+  color: white;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Additional styles to ensure your main element takes up full height */
+main {
+  width: 100%; /* Adjust based on your preference */
+  max-width: 600px; /* Example max-width, adjust as needed */
+  margin: auto;
+  padding: 20px;
+  box-sizing: borderer-box;
+}
+
+/* Ensure your sections take up full width of the container for consistent alignment */
+section {
+  width: 100%;
+}
+#checkBalance {
+  border-radius: 5rem;
+  border: 1px solid;
+  width: 100px; /* Sets the width of the button */
+  height: 30px; /* Sets the height of the button */
+  font-size: 12px;
+  background-color: #9d84ad; /* Sets the size of the text inside the button */
+}
+#accountNumber,
+#amount {
+  width: 100%; /* Use 100% to make it responsive to the container width, or set a specific width */
+  height: 40px; /* Adjust based on your design */
+  padding: 8px 12px; /* Top & bottom, Left & right padding */
+  border: 1px solid #ccc; /* Border width, style, and color */
+  border-radius: 20px; /* Rounded corners */
+  font-size: 16px; /* Text size inside the input */
+  background-color: #5b619e; /* Background color */
+  color: #7a2525; /* Text color */
+  outline: none; /* Removes the default focus outline */
+}
+
+#accountNumber:focus,
+#amount:focus {
+  border-color: #7b8162; /* Changes border color when the input is focused */
+  box-shadow: 0 0 0 0.2rem rgba(7, 7, 7, 0.25); /* Optional: Adds a glow effect on focus */
+}
+
+#accountNumber::placeholder,
+#amount::placeholder {
+  color: #9f9999; /* Placeholder text color */
+  font-style: italic; /* Placeholder text style */
+}
