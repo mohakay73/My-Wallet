@@ -84,25 +84,13 @@ h1 {
 
     &:first-child,
     &:last-child {
-      animation: translateDown 0.6s 1.4s;
+      animation: translateDown 0.2s 0´2s;
       animation-fill-mode: forwards;
 
       &::before {
         bottom: calc(100% + 1rem);
         left: calc(50% - 1rem);
-        animation: scaleYUp 0.6s 1.4s;
-        animation-fill-mode: forwards;
-      }
-    }
-
-    @include odd-between(3, 13) {
-      animation: translateUp 0.6s 1.4s;
-      animation-fill-mode: forwards;
-
-      &::before {
-        top: calc(100%);
-        left: calc(50% - 1rem);
-        animation: scaleYDown 0.6s 1.4s;
+        animation: scaleYUp 0.2s 0.2s;
         animation-fill-mode: forwards;
       }
     }

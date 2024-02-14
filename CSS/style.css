@@ -17,7 +17,7 @@
 /* Continue defining custom properties for other button types based on your needs */
 
 /* Common button styles */
-button {
+a {
   background: none;
   border: 2px solid;
   font: inherit;
@@ -28,8 +28,8 @@ button {
   transition: 0.25s;
 }
 
-button:hover,
-button:focus {
+a:hover,
+a:focus {
   border-color: var(--hover); /* Use the --hover custom property */
   color: #fff;
 }

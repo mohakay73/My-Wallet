@@ -10,11 +10,14 @@
       rel="stylesheet"
       href="/CSS/transactions.css"
     />
+    <link rel="stylesheet" href="/CSS/animation.css">
+    <script src="/script/dom.js" defer type="module"> </script>
     <title>Transactions</title>
   </head>
   <body>
+    <div class="container"></div>
+    <h1>My Wallet</h1>
     <main>
-      <div class="container">
         <section>
           <div class="form-control">
             <input
@@ -23,15 +26,16 @@
               id="accountNumber"
               placeholder="Enter your account"
             />
-
+<div>
             <button
               id="checkBalance"
               class="btn btn-primary"
             >
               Check Balance
             </button>
+            </div>
             <div>
-              <span>Eth Balance</span>
+              <span>Your Balance</span>
             </div>
             <div
               id="balance"
@@ -43,15 +47,16 @@
               type="text"
               name="amount"
               id="amount"
-              placeholder="Ange värde att överföra"
+              placeholder="Transaction amount"
             />
           </div>
+          <br />
           <div class="form-control">
             <input
               type="text"
               name="toAccountNumber"
               id="toAccountNumber"
-              placeholder="Till konto"
+              placeholder="Send to"
             />
           </div>
           <div class="form-control">
@@ -59,18 +64,12 @@
               id="sendTx"
               class="btn btn-primary"
             >
-              Överför
+              Send
             </button>
           </div>
         </section>
-        <hr />
-        <section>
-          <h4>Transaktioner</h4>
-          <div class="transactions-container">
-            <div><span>Från</span><span>Till</span><span>Ethers</span></div>
-            <div id="transactions"></div>
-          </div>
-        </section>
+       
+      
       </div>
     </main>
   </body>
