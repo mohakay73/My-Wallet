@@ -6,6 +6,7 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: hsl(227, 10%, 10%);
@@ -13,39 +14,25 @@ body {
   width: 100%;
 }
 
-body {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
 .container {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 2rem;
 }
 
-/* Additional styles to ensure your main element takes up full height */
-main {
-  width: 100%; /* Adjust based on your preference */
-}
-
-/* Ensure your sections take up full width of the container for consistent alignment */
 section {
   width: 100%;
+  max-width: 800px;
 }
 #checkBalance,
-#sendTx,
-#connect {
+#sendTx {
   margin: 20px;
   border-radius: 5rem;
   border: 1px solid;
-  width: 180px; /* Sets the width of the button */
+  width: 250px; /* Sets the width of the button */
   height: 50px; /* Sets the height of the button */
   font-size: 16px;
-  background-color: #9d84ad; /* Sets the size of the text inside the button */
+  background-color: #9d84ad;
+  color: #e5f508;
 }
 #checkBalance:hover,
 #sendTx:hover,
@@ -53,7 +40,7 @@ section {
   letter-spacing: 8px;
   background-color: #a972cb;
   color: #f5f4f4;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 #accountNumber,
 #amount,
@@ -88,9 +75,32 @@ h1 {
 }
 span {
   font-size: 1.5rem;
-  color: coral;
+  color: #9d84ad;
 }
 #balance {
   font-size: 1.5rem;
   color: gold;
+}
+#connect {
+  margin: 20px;
+  border-radius: 5rem;
+  border: 1px solid black;
+  width: 300px; /* Sets the width of the button */
+  height: 80px; /* Sets the height of the button */
+  font-size: 18px;
+  background-color: #9d84ad;
+  color: #e5f508;
+}
+.transactions-container > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.transactions-container span {
+  color: #c1d119;
+}
+h4 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #9d84ad;
 }

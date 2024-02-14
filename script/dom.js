@@ -16,21 +16,37 @@ function initApp() {
   console.log(ethers);
 }
 
-async function checkBalance() {
+export async function checkBalance() {
   account = accountInput.value;
   const balance = await provider.getBalance(account);
-  console.log(`${balance} ETH`);
-  displayBalance.innerHTML = `${balance} ETH`;
-  displayBalance.innerHTML = ethers.utils.formatEther(balance);
+  displayBalance.innerHTML = ethers.utils.formatEther(balance) + ' ETH';
 }
 
 async function sendTransaction() {
   signer = provider.getSigner(account);
-  const trx = await signer.sendTransaction({
-    to: toAccount.value,
-    value: ethers.utils.parseEther(amountInput.value),
-  });
-  console.log(trx);
+  const transactionStatus = document.querySelector('#transactionStatus');
+  try {
+    const trx = await signer.sendTransaction({
+      to: toAccount.value,
+      value: ethers.utils.parseEther(amountInput.value),
+    });
+
+    await trx.wait();
+
+    console.log(trx);
+    transactionStatus.innerHTML = 'Transaction completed successfully!';
+    transactionStatus.style.color = 'green';
+    setTimeout(() => {
+      transactionStatus.innerHTML = '';
+    }, 3000);
+  } catch (error) {
+    console.error('Transaction failed: ', error);
+    transactionStatus.innerHTML = 'Transaction failed!';
+    transactionStatus.style.color = 'red';
+    setTimeout(() => {
+      transactionStatus.innerHTML = '';
+    }, 3000);
+  }
 }
 
 document.addEventListener('DOMContentLoaded', initApp);

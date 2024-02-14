@@ -12,6 +12,8 @@
     />
     <link rel="stylesheet" href="/CSS/animation.css">
     <script src="/script/dom.js" defer type="module"> </script>
+    <script src="/script/check-balance.js" defer type="module"></script>
+   
     <title>Transactions</title>
   </head>
   <body>
@@ -45,8 +47,7 @@
             <div>
               <span>Start a transaction</span>
             </div>
-
-           
+             <div id="transactionStatus"></div>
           </div>
           <div class="form-control">
             <input
@@ -72,6 +73,21 @@
             >
               Send
             </button>
+          </div>
+          <div class="form-control">
+            <button
+              id="blocks"
+              class="btn btn-primary"
+            >
+              Check Blocks
+            </button>
+          </div>
+        </section>
+        <section>
+          <h4>Transactions</h4>
+          <div class="transactions-container">
+            <div><span>From</span><span>To</span><span>Amount</span></div>
+            <div id="transactions"></div>
           </div>
         </section>
        
