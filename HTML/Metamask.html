@@ -11,14 +11,15 @@
       href="/CSS/transactions.css"
     />
     <link rel="stylesheet" href="/CSS/animation.css">
-    <script src="/script/dom.js" defer type="module"> </script>
+   <script src="/script/metamask.js" defer type="module"></script>
     <title>Transactions</title>
   </head>
   <body>
     <div class="container"></div>
-    <h1>My Wallet</h1>
+    <h1>My MetaMask</h1>
     <main>
         <section>
+            <button id="connect">Anslut till MetaMask</button>
           <div class="form-control">
             <input
               type="text"
@@ -37,16 +38,14 @@
             <div>
               <span>Your Balance</span>
             </div>
-             <div
-              id="balance"
-              class="balance"
-            ></div>
             <br>
             <div>
               <span>Start a transaction</span>
             </div>
-
-           
+            <div
+              id="balance"
+              class="balance"
+            ></div>
           </div>
           <div class="form-control">
             <input

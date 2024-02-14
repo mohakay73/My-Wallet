@@ -22,12 +22,9 @@ body {
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  text-align: center; /* This ensures that the text of h1 is centered */
-  width: 600px; /* Adjust as needed */
-  max-width: 95%; /* Prevents the container from stretching too much on smaller screens */
-  padding: 10px;
-  box-sizing: border-box;
+  padding: 0 2rem;
 }
 
 /* Additional styles to ensure your main element takes up full height */
@@ -40,14 +37,23 @@ section {
   width: 100%;
 }
 #checkBalance,
-#sendTx {
+#sendTx,
+#connect {
   margin: 20px;
   border-radius: 5rem;
   border: 1px solid;
-  width: 100px; /* Sets the width of the button */
-  height: 30px; /* Sets the height of the button */
-  font-size: 12px;
+  width: 180px; /* Sets the width of the button */
+  height: 50px; /* Sets the height of the button */
+  font-size: 16px;
   background-color: #9d84ad; /* Sets the size of the text inside the button */
+}
+#checkBalance:hover,
+#sendTx:hover,
+#connect:hover {
+  letter-spacing: 8px;
+  background-color: #a972cb;
+  color: #f5f4f4;
+  font-size: 1.2rem;
 }
 #accountNumber,
 #amount,
@@ -55,7 +61,7 @@ section {
   width: 80%; /* Use 100% to make it responsive to the container width, or set a specific width */
   height: 40px; /* Adjust based on your design */
   padding: 8px 12px; /* Top & bottom, Left & right padding */
-  border: 1px solid #ccc; /* Border width, style, and color */
+  border: 1px solid #3d3b3b; /* Border width, style, and color */
   border-radius: 20px; /* Rounded corners */
   font-size: 16px; /* Text size inside the input */
   background-color: #5b619e; /* Background color */
@@ -79,4 +85,12 @@ section {
 h1 {
   text-align: center; /* Ensures the text is centered if the line breaks */
   margin: 100px 0 50px; /* Adds some space below the h1, adjust as needed */
+}
+span {
+  font-size: 1.5rem;
+  color: coral;
+}
+#balance {
+  font-size: 1.5rem;
+  color: gold;
 }

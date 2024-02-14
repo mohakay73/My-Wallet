@@ -19,8 +19,8 @@ function initApp() {
 async function checkBalance() {
   account = accountInput.value;
   const balance = await provider.getBalance(account);
-
-  displayBalance.innerHTML = balance;
+  console.log(`${balance} ETH`);
+  displayBalance.innerHTML = `${balance} ETH`;
   displayBalance.innerHTML = ethers.utils.formatEther(balance);
 }
 
