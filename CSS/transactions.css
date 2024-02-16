@@ -24,19 +24,22 @@ section {
   max-width: 800px;
 }
 #checkBalance,
-#sendTx {
+#sendTx,
+#blocks {
   margin: 20px;
   border-radius: 5rem;
   border: 1px solid;
-  width: 250px; /* Sets the width of the button */
+  width: 200px; /* Sets the width of the button */
   height: 50px; /* Sets the height of the button */
   font-size: 16px;
   background-color: #9d84ad;
-  color: #e5f508;
+  color: white;
+  cursor: pointer;
 }
 #checkBalance:hover,
 #sendTx:hover,
-#connect:hover {
+#connect:hover,
+#blocks:hover {
   letter-spacing: 8px;
   background-color: #a972cb;
   color: #f5f4f4;
@@ -51,7 +54,7 @@ section {
   border: 1px solid #3d3b3b; /* Border width, style, and color */
   border-radius: 20px; /* Rounded corners */
   font-size: 16px; /* Text size inside the input */
-  background-color: #5b619e; /* Background color */
+  background-color: #212125; /* Background color */
   color: #c1d119; /* Text color */
   outline: none; /* Removes the default focus outline */
 }
