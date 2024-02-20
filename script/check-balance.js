@@ -1,13 +1,16 @@
+import { ethers } from './ethers.min.js';
+
 function initApp() {}
 
 const CheckBlocks = document.querySelector('#blocks');
 const transactionList = document.querySelector('#transactions');
-const rpc = new Web3('HTTP://127.0.0.1:7545');
+const provider = new ethers.providers.JsonRpcProvider('HTTP://127.0.0.1:7545');
 
 async function checkBlocks() {
-  const block = await rpc.eth.getBlock('latest');
+  const block = await provider.getBlock('latest');
+  console.log('Latest block:', block);
 
-  if (block === null) return;
+  if (block === null) returns;
 
   const transactions = block.transactions;
 
@@ -18,20 +21,20 @@ async function checkBlocks() {
 
 function createTransactionList(transaction) {
   transactionList.innerHTML += `
+  
     <span>${transaction.from}</span>
     <span>${transaction.to}</span>
-    <span>${rpc.utils.fromWei(transaction.value, 'ether')} ETH</span>`;
+    <span>${ethers.utils.formatEther(transaction.value)} ETH</span>`;
 }
 
 async function displayHistory(transactions) {
-  transactionList.innerHTML = '';
+  transactionList.innerhtml = '';
   for (let hash of transactions) {
     //Get transaction by its hash
-    let trx = await rpc.eth.getTransaction(hash);
+    let trx = await provider.getTransaction(hash);
     console.log(trx);
     createTransactionList(trx);
   }
 }
-
 document.addEventListener('DOMContentLoaded', initApp);
 CheckBlocks.addEventListener('click', checkBlocks);

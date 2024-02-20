@@ -12,9 +12,7 @@ const provider = new ethers.providers.JsonRpcProvider('HTTP://127.0.0.1:7545');
 let account;
 let signer;
 
-function initApp() {
-  console.log(ethers);
-}
+function initApp() {}
 
 export async function checkBalance() {
   account = accountInput.value;
@@ -33,7 +31,6 @@ async function sendTransaction() {
 
     await trx.wait();
 
-    console.log(trx);
     transactionStatus.innerHTML = 'Transaction completed successfully!';
     transactionStatus.style.color = 'green';
     setTimeout(() => {
