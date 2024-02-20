@@ -1,27 +1,28 @@
-/* Add to your transactions.css file */
-
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 html,
 body {
   height: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
   background: hsl(227, 10%, 10%);
   color: white;
-  width: 100%;
+  font-family: Arial, sans-serif;
 }
 
 .container {
-  justify-content: center;
-  align-items: center;
+  margin: auto;
+  max-width: 1200px;
+  padding: 1rem 2rem;
 }
 
 section {
+  display: block;
   width: 100%;
   max-width: 800px;
+  margin-bottom: 20px auto;
 }
 #checkBalance,
 #sendTx,
@@ -29,8 +30,8 @@ section {
   margin: 20px;
   border-radius: 5rem;
   border: 1px solid;
-  width: 200px; /* Sets the width of the button */
-  height: 50px; /* Sets the height of the button */
+  width: 200px;
+  height: 50px;
   font-size: 16px;
   background-color: #9d84ad;
   color: white;
@@ -48,33 +49,33 @@ section {
 #accountNumber,
 #amount,
 #toAccountNumber {
-  width: 80%; /* Use 100% to make it responsive to the container width, or set a specific width */
-  height: 40px; /* Adjust based on your design */
-  padding: 8px 12px; /* Top & bottom, Left & right padding */
-  border: 1px solid #3d3b3b; /* Border width, style, and color */
-  border-radius: 20px; /* Rounded corners */
-  font-size: 16px; /* Text size inside the input */
-  background-color: #212125; /* Background color */
-  color: #c1d119; /* Text color */
-  outline: none; /* Removes the default focus outline */
+  width: 80%;
+  height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #3d3b3b;
+  border-radius: 20px;
+  font-size: 16px;
+  background-color: #212125;
+  color: #c1d119;
+  outline: none;
 }
 
 #accountNumber:focus,
 #amount:focus,
 #toAccountNumber:focus {
-  border-color: #7b8162; /* Changes border color when the input is focused */
-  box-shadow: 0 0 0 0.2rem rgba(7, 7, 7, 0.25); /* Optional: Adds a glow effect on focus */
+  border-color: #7b8162;
+  box-shadow: 0 0 0 0.2rem rgba(7, 7, 7, 0.25);
 }
 
 #accountNumber::placeholder,
 #amount::placeholder,
 #toAccountNumber::placeholder {
-  color: #9f9999; /* Placeholder text color */
-  font-style: italic; /* Placeholder text style */
+  color: #9f9999;
+  font-style: italic;
 }
 h1 {
-  text-align: center; /* Ensures the text is centered if the line breaks */
-  margin: 100px 0 50px; /* Adds some space below the h1, adjust as needed */
+  text-align: center;
+  margin: 2rem 0;
 }
 span {
   font-size: 1.5rem;
@@ -88,11 +89,11 @@ span {
   margin: 20px;
   border-radius: 5rem;
   border: 1px solid black;
-  width: 300px; /* Sets the width of the button */
-  height: 80px; /* Sets the height of the button */
+  width: 300px;
+  height: 80px;
   font-size: 18px;
   background-color: #9d84ad;
-  color: #e5f508;
+  color: #fcfcfc;
 }
 .transactions-container > div {
   display: flex;
@@ -100,10 +101,16 @@ span {
 }
 
 .transactions-container span {
-  color: #c1d119;
+  color: #6f7446;
+  font-size: 0.9rem;
 }
 h4 {
   font-size: 1.5rem;
   font-weight: bold;
   color: #9d84ad;
+  margin-bottom: 1rem;
+}
+#transactions {
+  display: flex;
+  flex-direction: column;
 }

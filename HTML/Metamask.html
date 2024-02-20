@@ -15,10 +15,12 @@
     <title>Transactions</title>
   </head>
   <body>
-    <div class="container"></div>
+    
     <h1>My MetaMask</h1>
-     <button id="connect">Connect your MetaMask wallet</button>
+     
+     <div class="container">
     <main>
+      <button id="connect">Connect your MetaMask wallet</button>
         <section>
            
           <div class="form-control">
@@ -39,14 +41,15 @@
             <div>
               <span>Your Balance</span>
             </div>
+             <div
+              id="balance"
+              class="balance"
+            ></div>
             <br>
             <div>
               <span>Start a transaction</span>
             </div>
-            <div
-              id="balance"
-              class="balance"
-            ></div>
+           
           </div>
           <div class="form-control">
             <input
@@ -77,6 +80,7 @@
        
       
       </div>
+
     </main>
   </body>
 </html>
