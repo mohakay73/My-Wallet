@@ -9,30 +9,39 @@ const valueInput = document.querySelector('#amount');
 let acccounts;
 
 async function connect() {
-  if (typeof window.ethereum != undefined) {
-    console.log('Va kul att ethereum är på plats');
-    const accounts = await window.ethereum.request({
-      method: 'eth_requestAccounts',
-    });
-    console.log(accounts);
+  if (typeof window.ethereum !== 'undefined') {
+    try {
+      const accounts = await window.ethereum.request({
+        method: 'eth_requestAccounts',
+      });
+    } catch (error) {
+      displayErrorMessage(error.message);
+    }
   } else {
-    console.log('Va synd, du måste ha Metamask installerat');
+    displayErrorMessage(
+      'Metamask is required to connect. Please install Metamask and try again.'
+    );
   }
 }
 
 async function checkBalance() {
-  if (typeof ethereum !== undefined) {
-    acccounts = await ethereum.request({ method: 'eth_requestAccounts' });
+  if (typeof ethereum !== 'undefined') {
+    try {
+      acccounts = await ethereum.request({ method: 'eth_requestAccounts' });
 
-    const balance = await ethereum.request({
-      method: 'eth_getBalance',
-      params: [accountInput.value, 'latest'],
-    });
-    const parsedBalanced = parseInt(balance) / Math.pow(10, 18);
-    displayBalance.innerText = parsedBalanced;
-    console.log(parsedBalanced);
+      const balance = await ethereum.request({
+        method: 'eth_getBalance',
+        params: [accountInput.value, 'latest'],
+      });
+      const parsedBalance = parseInt(balance, 10) / Math.pow(10, 18);
+      displayBalance.innerText = `${parsedBalance} ETH`;
+    } catch (error) {
+      displayErrorMessage('Failed to fetch balance. Please try again.');
+    }
   } else {
-    console.log('No ethereum');
+    displayErrorMessage(
+      'Ethereum object not found. Please ensure you have MetaMask installed.'
+    );
   }
 }
 
@@ -55,6 +64,19 @@ async function sendFunds() {
     });
   } catch (error) {
     console.log(error);
+  }
+}
+
+function displayErrorMessage(message) {
+  const errorMessageElement = document.getElementById('error-message');
+  if (errorMessageElement) {
+    errorMessageElement.innerText = message;
+    errorMessageElement.style.display = 'block';
+    setTimeout(() => {
+      errorMessageElement.style.display = 'none';
+    }, 3000);
+  } else {
+    console.error(message);
   }
 }
 

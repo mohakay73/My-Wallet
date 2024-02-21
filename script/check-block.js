@@ -8,7 +8,6 @@ const provider = new ethers.providers.JsonRpcProvider('HTTP://127.0.0.1:7545');
 
 async function checkBlocks() {
   const block = await provider.getBlock('latest');
-  console.log('Latest block:', block);
 
   if (block === null) returns;
 
@@ -30,9 +29,7 @@ function createTransactionList(transaction) {
 async function displayHistory(transactions) {
   transactionList.innerhtml = '';
   for (let hash of transactions) {
-    //Get transaction by its hash
     let trx = await provider.getTransaction(hash);
-    console.log(trx);
     createTransactionList(trx);
   }
 }
