@@ -1,4 +1,5 @@
 import { ethers } from './ethers.min.js';
+import { provider } from './app.js';
 
 const accountInput = document.querySelector('#accountNumber');
 const checkButton = document.querySelector('#checkBalance');
@@ -6,8 +7,6 @@ const displayBalance = document.querySelector('#balance');
 const sendButton = document.querySelector('#sendTx');
 const amountInput = document.querySelector('#amount');
 const toAccount = document.querySelector('#toAccountNumber');
-
-const provider = new ethers.providers.JsonRpcProvider('HTTP://127.0.0.1:7545');
 
 let account;
 let signer;

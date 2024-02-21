@@ -1,10 +1,9 @@
 import { ethers } from './ethers.min.js';
-
+import { provider } from './app.js';
 function initApp() {}
 
 const CheckBlocks = document.querySelector('#blocks');
 const transactionList = document.querySelector('#transactions');
-const provider = new ethers.providers.JsonRpcProvider('HTTP://127.0.0.1:7545');
 
 async function checkBlocks() {
   const block = await provider.getBlock('latest');
